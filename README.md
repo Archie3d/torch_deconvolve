@@ -7,6 +7,13 @@ For example, if you have a recording made by two different microphones (e.g. pie
 
 ## How to use
 
+### Install
+```shell
+python -m venv venv
+. venv/bin/activate
+pip install -r ./requirements.txt
+```
+
 ```shell
 python torch_deconvolve.py source.wav target.wav ir.wav
 ```

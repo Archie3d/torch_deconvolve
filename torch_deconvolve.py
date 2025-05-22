@@ -189,7 +189,12 @@ def main():
         print(f"Source audio sample rate ({source_sample_rate}) does not match the target sample rate ({target_sample_rate})")
         return -1
 
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    device = "cpu"
+    if torch.cuda.is_available():
+        device = "cuda"
+    elif torch.backends.mps.is_available():
+        device = "mps"
+
     print(f"Running optimization on {device} for IR of {args.length} samples...")
 
     ir, best_loss, best_epoch = optimize(

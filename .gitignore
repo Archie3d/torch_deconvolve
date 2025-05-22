@@ -1,6 +1,9 @@
 *.wav
+peaks/
 
 # Byte-compiled / optimized / DLL files
+venv/
+.venv/
 __pycache__/
 *.py[cod]
 *$py.class
